@@ -60,6 +60,121 @@ public class Selenium_Test {
                 "Warsaw University of Technology,","Faculty of Electronics and Information Technology,","Warsaw 2015");
 
 
+        WebElement divDown = driver.findElement(By.id("right_col"));
+        String divText = divDown.findElement(By.xpath("//h3[@class = 'ng-binding' and text()='Application parameters']")).getAttribute("innerHTML");
+        Assert.assertEquals("Application parameters", divText);
+
+
+        String serv = driver.findElement(By.id("server_time")).getAttribute("innerHTML");
+        String c = serv.split("<em id=\"server_time_val\" class=\"ng-binding\">") [0];
+        String date2 = serv.split("<em id=\"server_time_val\" class=\"ng-binding\">|</em>") [1];
+        Assert.assertTrue(date2 != null);
+        Assert.assertEquals("server time: ", c);
+
+        String db = driver.findElement(By.id("db_version")).getAttribute("innerHTML");
+        System.out.println(db);
+        String dbver = db.split("<em id=\"db_version_val\" class=\"ng-binding\">") [0];
+        String dbText = db.split("<em id=\"db_version_val\" class=\"ng-binding\">|</em>") [1];
+        Assert.assertEquals("db version: ", dbver);
+        Assert.assertEquals("PostgreSQL 9.4.18 on x86_64-unknown-linux-gnu", dbText);
+
+
+        String server = driver.findElement(By.id("server_version")).getAttribute("innerHTML");
+        System.out.println(server);
+        String servver = server.split("<em id=\"server_version_val\" class=\"ng-binding\">") [0];
+        String servText = server.split("<em id=\"server_version_val\" class=\"ng-binding\">|</em>") [1];
+        Assert.assertEquals("server version: ", servver);
+        Assert.assertEquals("0.07.1635; Python: 3.5.3; Arch: ; Os: Linux #1 SMP Debian 4.9.110-1 (2018-07-05); Django: 2.0.2", servText);
+
+        String client_version = driver.findElement(By.id("client_version")).getAttribute("innerHTML");
+        System.out.println(client_version);
+        String clientver = client_version.split("<em id=\"client_version_val\" class=\"ng-binding\">") [0];
+        String clientText = client_version.split("<em id=\"client_version_val\" class=\"ng-binding\">|</em>") [1];
+        Assert.assertEquals("client version: ", clientver);
+        Assert.assertEquals("0.06.1634", clientText);
+
+        //--------------------------------------------------------------------------
+
+        WebElement pl = driver.findElement(By.id("a_lang_pl"));
+        Thread.sleep(2000);
+        pl.click();
+        Thread.sleep(2000);
+
+        /*String h1Text = driver.findElement(By.xpath("//*[@class='ng-binding ng-scope']")).getAttribute("innerHTML");
+        Assert.assertEquals("DnaAssembler - Help", h1Text);
+
+        String url = driver.findElement(By.id("file_formats_href")).getAttribute("innerHTML");
+        Assert.assertEquals("Input and output file formats", url);
+
+        String url2 = driver.findElement(By.id("algorithms_href")).getAttribute("innerHTML");
+        Assert.assertEquals("Parameters and algorithms used in application", url2);
+
+
+        String h4 = driver.findElement(By.xpath("//h4[@class = 'ng-binding']")).getAttribute("innerHTML");
+        String a = h4.split("<br>") [0];
+        String b = h4.split("<br>") [1];
+        Assert.assertEquals("For more information send an email:", a);
+        Assert.assertEquals("r.m.nowak@elka.pw.edu.pl", b);
+
+        String h3 = driver.findElement(By.xpath("//h3[@class = 'ng-binding']")).getAttribute("innerHTML");
+        Assert.assertEquals("Authors", h3);
+
+        String span = driver.findElement(By.xpath("//span[@id = 'authors']")).getAttribute("innerHTML");
+        System.out.println(span);
+        List<String> spans = Arrays.asList(span.split("<br>"));
+        System.out.println(spans);
+        spans.removeIf(n -> (n == "" ));
+        System.out.println(spans);
+        List<String> properSpans = Arrays.asList("Robert Nowak - r.m.nowak@elka.pw.edu.pl","Wiktor Kuśmirek, ",
+                "Warsaw University of Technology,","Faculty of Electronics and Information Technology,","Warsaw 2015");
+
+
+        WebElement divDown = driver.findElement(By.id("right_col"));
+        String divText = divDown.findElement(By.xpath("//h3[@class = 'ng-binding' and text()='Application parameters']")).getAttribute("innerHTML");
+        Assert.assertEquals("Application parameters", divText);
+
+
+        String serv = driver.findElement(By.id("server_time")).getAttribute("innerHTML");
+        String c = serv.split("<em id=\"server_time_val\" class=\"ng-binding\">") [0];
+        String date2 = serv.split("<em id=\"server_time_val\" class=\"ng-binding\">|</em>") [1];
+        Assert.assertTrue(date2 != null);
+        Assert.assertEquals("server time: ", c);
+
+        String db = driver.findElement(By.id("db_version")).getAttribute("innerHTML");
+        System.out.println(db);
+        String dbver = db.split("<em id=\"db_version_val\" class=\"ng-binding\">") [0];
+        String dbText = db.split("<em id=\"db_version_val\" class=\"ng-binding\">|</em>") [1];
+        Assert.assertEquals("db version: ", dbver);
+        Assert.assertEquals("PostgreSQL 9.4.18 on x86_64-unknown-linux-gnu", dbText);
+
+
+        String server = driver.findElement(By.id("server_version")).getAttribute("innerHTML");
+        System.out.println(server);
+        String servver = server.split("<em id=\"server_version_val\" class=\"ng-binding\">") [0];
+        String servText = server.split("<em id=\"server_version_val\" class=\"ng-binding\">|</em>") [1];
+        Assert.assertEquals("server version: ", servver);
+        Assert.assertEquals("0.07.1635; Python: 3.5.3; Arch: ; Os: Linux #1 SMP Debian 4.9.110-1 (2018-07-05); Django: 2.0.2", servText);
+
+        String client_version = driver.findElement(By.id("client_version")).getAttribute("innerHTML");
+        System.out.println(client_version);
+        String clientver = client_version.split("<em id=\"client_version_val\" class=\"ng-binding\">") [0];
+        String clientText = client_version.split("<em id=\"client_version_val\" class=\"ng-binding\">|</em>") [1];
+        Assert.assertEquals("client version: ", clientver);
+        Assert.assertEquals("0.06.1634", clientText);*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
 
 
